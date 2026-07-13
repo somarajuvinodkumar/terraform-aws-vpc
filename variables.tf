@@ -56,3 +56,9 @@ variable "eip_tags" {
     type = map(string)
     default = {}
 }
+
+variable "nat_gateway_tags" {
+    type = map(string)
+    default = {}
+    
+}
