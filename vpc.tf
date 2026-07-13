@@ -82,4 +82,15 @@ resource "aws_subnet" "database" {
   )
 }
 
-### created NATGATE WAY
+### (aws eip terraform - elastic ip) creattion
+
+resource "aws_eip" "nat" {
+  domain   = "vpc"
+  tags = merge(
+    var.eip_tags,
+    local.common_tags,
+    {
+      Name = "${var.project}-${var.environment}"
+    }
+  )
+}
